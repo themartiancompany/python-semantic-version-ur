@@ -40,7 +40,7 @@ checkdepends=(
   "${_py}-django"
 )
 source=(
-  "${url}/archive/${pkgver}/${_Pkgname}-${pkgver}.tar.gz"
+  "${url}/archive/${pkgver}/${_pkgname}-${pkgver}.tar.gz"
 )
 sha512sums=(
   'e060dd60db62663c6ebf21fdca33b2390d9bbad15fbdfa504221ab646426f09168caf00e79cee7ed4ef442c23fd587c9e421aa744990101ea626b58f4e320242'
@@ -48,7 +48,7 @@ sha512sums=(
 
 build() {
   cd \
-    "${_Pkgname}-${pkgver}"
+    "${_pkgname}-${pkgver}"
   "${_py}" \
     setup.py \
       build
@@ -56,7 +56,7 @@ build() {
 
 check() {
   cd \
-    "${_Pkgname}-${pkgver}"
+    "${_pkgname}-${pkgver}"
   "${_py}" \
     setup.py \
       egg_info
@@ -65,7 +65,7 @@ check() {
 
 package() {
   cd \
-    "${_Pkgname}-${pkgver}"
+    "${_pkgname}-${pkgver}"
   "${_py}" \
     setup.py \
       install \
